@@ -1,10 +1,10 @@
 use burgers; 
 
-INSERT INTO burgers (name, devoured)
+INSERT INTO burger (name, devoured)
 VALUES ('Cheeseburger', false);
 
-INSERT INTO burgers (name, devoured)
+INSERT INTO burger (name, devoured)
 VALUES ('Bacon Cheeseburger', true);
 
-INSERT INTO burgers (name, devoured)
+INSERT INTO burger (name, devoured)
 VALUES ('Plain Burger', false);
