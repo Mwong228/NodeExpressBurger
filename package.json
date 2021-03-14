@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Mwong228/NodeExpressBurger#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "handlebars": "^4.7.7",
     "mysql": "^2.18.1"
   }
 }
