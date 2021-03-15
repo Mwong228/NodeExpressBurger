@@ -21,7 +21,10 @@ app.get('/', async function(req, res){
     res.render('index', {data: burgerList})
 })
 
-
+app.post('/burger/:id', async function(req,res){
+    await db.query('UPDATE burger SET devoured=true')
+    console.log('devoured')
+})
 
 app.listen(PORT, function(){
     console.log(`Serving burgers on PORT ${PORT}`)

@@ -5,28 +5,37 @@
     <div class="col-sm">
         <form> 
             <div class="mb-3">
-                <label for="burgerType" class="form-label">Enter a Burger</label>
+                <h3>Enter a Burger </h3>
                 <textarea class="form-control" id="burgerType" rows="3"></textarea>
             </div>
             <button type="sumbit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <div class="col-sm">
-        <form> 
-            <div class="mb-3">
-                <label for="burgerType" class="form-label">Burger List</label>
-                <textarea class="form-control" id="burgerType" rows="3"></textarea>
-            </div>
-        </form>
-        <button type="submit" class="btn btn-primary">Eat</button>
+        <h3>List of Burgers</h3>
+        <ul class="list-group">
+            {{#each data}}
+            <li class="list-group-item">
+                <div>
+                    {{this.name}}
+                    <button class="btn btn-primary float-end" onClick="eatBurger({{this.id}}">Devour</button>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
     </div>
     <div class="col-sm">
-        <form> 
-            <div class="mb-3">
-                <label for="burgerType" class="form-label">Burgers Already Devoured</label>
-                <textarea class="form-control" id="burgerType" rows="3"></textarea>
-            </div>
-        </form>
+        <h3>Devoured Burgers</h3>
+        <ul class="list-group">
+            {{#each data}}
+            <li class="list-group-item">
+                <div>
+                    {{this.name}}
+                    <button class="btn btn-primary float-end" onClick="eatBurger({{this.id}}">Devour</button>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
     </div>
   </div>
 </div>
