@@ -6,7 +6,7 @@
         <form> 
             <div class="mb-3">
                 <h3>Enter a Burger </h3>
-                <textarea class="form-control" id="burgerType" rows="3"></textarea>
+                <textarea class="form-control" id="burgerType" rows="1"></textarea>
             </div>
             <button type="sumbit" class="btn btn-primary">Submit</button>
         </form>
@@ -15,12 +15,14 @@
         <h3>List of Burgers</h3>
         <ul class="list-group">
             {{#each data}}
+            {{#unless this.devoured}}
             <li class="list-group-item">
-                <div>
+                <form action='/burger/{{this.id}}' method='post'>
                     {{this.name}}
-                    <button class="btn btn-primary float-end" onClick="eatBurger({{this.id}}">Devour</button>
-                </div>
+                    <button class="btn btn-primary float-end">Devour</button>
+                </form>
             </li>
+            {{/unless}}
             {{/each}}
         </ul>
     </div>
@@ -28,12 +30,14 @@
         <h3>Devoured Burgers</h3>
         <ul class="list-group">
             {{#each data}}
+            {{#if this.devoured}}
             <li class="list-group-item">
-                <div>
+                <form action='/burger/{{this.id}}' method='delete'>
                     {{this.name}}
-                    <button class="btn btn-primary float-end" onClick="eatBurger({{this.id}}">Devour</button>
-                </div>
+                    <button class="btn btn-primary float-end">Delete</button>
+                </form>
             </li>
+            {{/if}}
             {{/each}}
         </ul>
     </div>
