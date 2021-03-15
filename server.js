@@ -21,14 +21,20 @@ app.get('/', async function(req, res){
     res.render('index', {data: burgerList})
 })
 
+app.post('/', async function(req,res){
+    await db.query(`INSERT INTO burger (name, devoured) VALUE (${req.body.userBurger}, FALSE)`)
+    console.log('Inserted')
+    res.redirect('/')
+})
+
 app.post('/burger/:id', async function(req,res){
     await db.query(`UPDATE burger SET devoured=true WHERE id=${req.params.id}`)
-    console.log('devoured')
+    console.log('Devoured')
     res.redirect('/')
 })
 
 app.delete('/burger/:id', async function(req, res){
-    await db.query(`Delete FROM burger WHERE id=${req.params.id}`)
+    await db.query(`DELETE FROM burger WHERE id=${req.params.id}`)
     console.log(`Deleted`)
     res.redirect('/')
 })

@@ -3,13 +3,15 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-        <form> 
+        <div> 
             <div class="mb-3">
                 <h3>Enter a Burger </h3>
-                <textarea class="form-control" id="burgerType" rows="1"></textarea>
+                <textarea name="userBurger" class="form-control" id="burgerType" rows="1"></textarea>
             </div>
-            <button type="sumbit" class="btn btn-primary">Submit</button>
-        </form>
+            <form action='/' method='post'>
+                <button type="sumbit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
     <div class="col-sm">
         <h3>List of Burgers</h3>
@@ -32,9 +34,8 @@
             {{#each data}}
             {{#if this.devoured}}
             <li class="list-group-item">
-                <form action='/burger/{{this.id}}' method='delete'>
+                <form>
                     {{this.name}}
-                    <button class="btn btn-primary float-end">Delete</button>
                 </form>
             </li>
             {{/if}}
