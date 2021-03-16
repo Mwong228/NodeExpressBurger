@@ -22,7 +22,8 @@ app.get('/', async function(req, res){
 })
 
 app.post('/', async function(req,res){
-    await db.query(`INSERT INTO burger (name, devoured) VALUE (${req.body.userBurger}, FALSE)`)
+    console.log(`${req.body.userBurger}`)
+    await db.query('INSERT INTO burger (name) VALUE (?)', [req.body.userBurger])
     console.log('Inserted')
     res.redirect('/')
 })
