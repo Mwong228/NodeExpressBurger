@@ -16,7 +16,7 @@ In this application, you can added different types of burgers which you can late
 
 ## Demo
 * [Watch a Demonstration](https://drive.google.com/file/d/1QC4dBvc2CykZ_qrtL4MWj3a-LLcbE_58/view)
-
+![Picture](https://i.gyazo.com/aa0c6d801c34cea839d05dfaecd2cab4.png)
 
 ## Questions
 For any questions, please contact me with the information below:
